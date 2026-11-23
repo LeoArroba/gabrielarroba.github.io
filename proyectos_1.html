@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proyectos · Gabriel Arroba Sáenz</title>
+<meta name="description" content="ATS propio, herramienta de screening conectada a Excel y reportería automática de Excel a PowerPoint.">
+<meta property="og:title" content="Proyectos · Gabriel Arroba Sáenz">
+<meta property="og:description" content="ATS propio, herramienta de screening conectada a Excel y reportería automática de Excel a PowerPoint.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav"><div class="wrap">
+    <a class="logo" href="index.html"><i>GA</i> Gabriel Arroba</a>
+    <nav aria-label="Principal"><ul><li><a href="index.html">Inicio</a></li><li><a href="experiencia.html">Experiencia</a></li><li><a href="proyectos.html" class="act" aria-current="page">Proyectos</a></li><li><a href="contacto.html">Contacto</a></li></ul></nav></div></header>
+<main>
+<!-- ATS -->
+<section id="proyecto-ats" class="first">
+  <div class="wrap">
+    <div class="eyebrow">Proyecto destacado</div>
+    <h2>ATS: un portal de empleo para ordenar la selección</h2>
+    <p style="margin:6px 0 14px"><span class="badge">Prototipo funcional en validación</span></p>
+    <p class="intro">Estoy desarrollando un sistema de seguimiento de candidatos (ATS) accesible y de bajo costo, pensado para empresas con muchos cargos y procesos de contratación masiva. Reemplaza hojas de cálculo sueltas y formularios aparte por un solo flujo: el candidato postula, el sistema filtra, el reclutador da seguimiento y la jefatura ve los indicadores.</p>
+
+    <div class="feat">
+      <div class="card"><div class="ico">📝</div><h4>Formulario guiado</h4><p>Preguntas cerradas por cargo que filtran requisitos desde la postulación, con enlace propio para cada vacante.</p></div>
+      <div class="card"><div class="ico">🗂️</div><h4>Base de candidatos</h4><p>Matriz con quienes cumplen y no cumplen, hojas de vida vinculadas y matrices separadas para vacantes operativas y administrativas.</p></div>
+      <div class="card"><div class="ico">✅</div><h4>Seguimiento por etapas</h4><p>Checks de avance por candidato, desde el screening hasta el ingreso.</p></div>
+      <div class="card"><div class="ico">📈</div><h4>Indicadores</h4><p>Time to fill, time to hire y cumplimiento de plazos (ANS), visibles por reclutador para la jefatura.</p></div>
+      <div class="card"><div class="ico">📄</div><h4>Solicitud de empleo automática</h4><p>Al contratar, los datos ya capturados llenan la solicitud sin volver a digitarlos.</p></div>
+      <div class="card"><div class="ico">🌐</div><h4>Página de vacantes</h4><p>Portal público para que los candidatos vean las vacantes abiertas y postulen desde el celular.</p></div>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Vistas del ATS">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1">1 · Formulario</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2">2 · Matriz de candidatos</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3">3 · Indicadores</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p4" id="t4">4 · Solicitud de empleo</button>
+    </div>
+
+    <div class="win">
+      <div class="top"><i></i><i></i><i></i><span class="url">ats.ejemplo.com</span></div>
+
+      <!-- 1 FORM -->
+      <div class="pane on" id="p1" role="tabpanel" aria-labelledby="t1">
+        <span class="demo-note">Vista ilustrativa · datos ficticios</span>
+        <div class="small">Vacante: Asistente administrativo</div>
+        <div class="steps" aria-hidden="true"><i class="d"></i><i class="d"></i><i></i><i></i></div>
+        <div class="small">Paso 2 de 4 · Requisitos del cargo</div>
+        <div class="q"><p>¿Cuál es tu nivel de estudios?</p>
+          <div class="opts"><span class="opt">Bachiller</span><span class="opt sel">Tecnología / Tercer nivel</span><span class="opt">Cuarto nivel</span></div></div>
+        <div class="q"><p>¿Tienes disponibilidad para trabajar en horario rotativo?</p>
+          <div class="opts"><span class="opt sel">Sí</span><span class="opt">No</span></div></div>
+        <div class="q"><p>¿Cuántos años de experiencia tienes en el área?</p>
+          <div class="opts"><span class="opt">Menos de 1</span><span class="opt sel">1 a 3</span><span class="opt">Más de 3</span></div></div>
+        <span class="mbtn">Continuar →</span>
+        <div class="result">✔ El perfil cumple los requisitos mínimos y pasa al siguiente paso</div>
+      </div>
+
+      <!-- 2 MATRIZ -->
+      <div class="pane" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+        <span class="demo-note">Vista ilustrativa · datos ficticios</span>
+        <div class="seg"><span class="on">Administrativas</span><span>Operativas</span></div>
+        <div class="scroll">
+        <table class="tbl">
+          <thead><tr><th>Candidato</th><th>Cargo</th><th>Filtro</th><th>Etapa</th><th>Checks</th><th>CV</th></tr></thead>
+          <tbody>
+            <tr><td><b>Candidato 01</b></td><td>Asistente administrativo</td><td><span class="tag ok">Cumple</span></td><td>Entrevista</td><td><span class="ck y">✓</span><span class="ck y">✓</span><span class="ck n">–</span><span class="ck n">–</span></td><td><a href="#proyecto-ats" onclick="return false">Ver CV</a></td></tr>
+            <tr><td><b>Candidato 02</b></td><td>Asistente administrativo</td><td><span class="tag ok">Cumple</span></td><td>Presentación a jefatura</td><td><span class="ck y">✓</span><span class="ck y">✓</span><span class="ck y">✓</span><span class="ck n">–</span></td><td><a href="#proyecto-ats" onclick="return false">Ver CV</a></td></tr>
+            <tr><td><b>Candidato 03</b></td><td>Asistente administrativo</td><td><span class="tag no">No cumple</span></td><td>Descartado</td><td><span class="ck y">✓</span><span class="ck n">–</span><span class="ck n">–</span><span class="ck n">–</span></td><td><a href="#proyecto-ats" onclick="return false">Ver CV</a></td></tr>
+            <tr><td><b>Candidato 04</b></td><td>Asistente administrativo</td><td><span class="tag wip">En revisión</span></td><td>Screening</td><td><span class="ck y">✓</span><span class="ck n">–</span><span class="ck n">–</span><span class="ck n">–</span></td><td><a href="#proyecto-ats" onclick="return false">Ver CV</a></td></tr>
+            <tr><td><b>Candidato 05</b></td><td>Asistente administrativo</td><td><span class="tag ok">Cumple</span></td><td>Documentación de ingreso</td><td><span class="ck y">✓</span><span class="ck y">✓</span><span class="ck y">✓</span><span class="ck y">✓</span></td><td><a href="#proyecto-ats" onclick="return false">Ver CV</a></td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <!-- 3 KPIs -->
+      <div class="pane" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+        <span class="demo-note">Vista ilustrativa · datos ficticios</span>
+        <div class="kpis">
+          <div class="kpi"><small>Time to fill</small><strong>18 días</strong><span>Promedio de cierre de vacante</span></div>
+          <div class="kpi"><small>Time to hire</small><strong>12 días</strong><span>Desde la postulación hasta la oferta</span></div>
+          <div class="kpi"><small>Procesos a tiempo (ANS)</small><strong>82%</strong><span>Dentro del plazo acordado</span></div>
+        </div>
+        <div class="small" style="margin-bottom:4px;font-weight:700;color:var(--navy)">Cumplimiento de plazos por reclutador</div>
+        <div class="rec"><span>Reclutador A</span><div class="tr"><b style="width:88%"></b></div><em>88%</em></div>
+        <div class="rec"><span>Reclutador B</span><div class="tr"><b style="width:79%"></b></div><em>79%</em></div>
+        <div class="rec"><span>Reclutador C</span><div class="tr"><b style="width:71%"></b></div><em>71%</em></div>
+        <div class="legend"><span><i style="background:var(--blue)"></i>A tiempo</span><span><i style="background:var(--bad-bg);border:1px solid #efc3bb"></i>Fuera de límite</span></div>
+      </div>
+
+      <!-- 4 SOLICITUD -->
+      <div class="pane" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
+        <span class="demo-note">Vista ilustrativa · datos ficticios</span>
+        <div class="doc">
+          <h5>Solicitud de empleo · llenado automático</h5>
+          <div class="f"><label>Nombres y apellidos</label><div class="auto">Candidato 05 (ejemplo)</div></div>
+          <div class="f"><label>Cargo al que aplica</label><div class="auto">Asistente administrativo</div></div>
+          <div class="f"><label>Nivel de estudios</label><div class="auto">Tercer nivel</div></div>
+          <div class="f"><label>Disponibilidad</label><div class="auto">Horario rotativo</div></div>
+          <div class="f full"><label>Experiencia</label><div class="auto">1 a 3 años en el área</div></div>
+          <div class="f"><label>Referencias laborales</label><div>Pendiente de completar</div></div>
+          <div class="f"><label>Firma y fecha</label><div>Pendiente</div></div>
+        </div>
+        <p class="small" style="margin-top:14px">Los campos en verde se llenan solos con lo que el candidato ya respondió en el formulario.</p>
+      </div>
+    </div>
+    <p class="cap"><b>Nota:</b> las pantallas son vistas ilustrativas con datos ficticios que muestran cómo funciona el sistema. No contienen información real de empresas ni de candidatos.</p>
+  </div>
+</section>
+
+
+<section id="screening" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Herramientas de trabajo diario</div>
+    <h2>Screening y reportería de candidatos</h2>
+    <p class="intro">Mientras el ATS avanza, creé herramientas más pequeñas que uso en mis procesos de selección para ahorrar tiempo y presentar la información de forma clara a jefatura.</p>
+
+    <div class="tool">
+      <div class="tool-text">
+        <div class="ico">🔎</div>
+        <h3>Herramienta de screening conectada a Excel</h3>
+        <p>Página de screening enlazada a un Excel maestro, con una hoja por vacante. Permite registrar varios candidatos por proceso y clasificarlos, y además:</p>
+        <ul class="ticks">
+          <li>Clasifica cada perfil como <b>opción</b>, <b>posible opción</b> o <b>descartado</b>, con su motivo.</li>
+          <li>Descarga los resultados por vacante.</li>
+          <li>Tiene una vista para presentar el perfil del candidato a jefatura.</li>
+          <li>Los datos se quedan solo en el computador de trabajo.</li>
+        </ul>
+        <div class="chips"><span class="chip">HTML</span><span class="chip">Excel</span><span class="chip">Screening</span></div>
+      </div>
+      <div class="win">
+        <div class="top"><i></i><i></i><i></i><span class="url">Screening · Asistente administrativo</span></div>
+        <div class="pane on" style="display:block">
+          <span class="demo-note">Datos ficticios</span>
+          <div class="scroll">
+          <table class="tbl">
+            <thead><tr><th>Candidato</th><th>Resultado</th><th>Motivo</th></tr></thead>
+            <tbody>
+              <tr><td><b>Candidato 01</b></td><td><span class="tag ok">Opción</span></td><td>Cumple perfil y disponibilidad</td></tr>
+              <tr><td><b>Candidato 02</b></td><td><span class="tag wip">Posible opción</span></td><td>Experiencia menor a la requerida</td></tr>
+              <tr><td><b>Candidato 03</b></td><td><span class="tag no">Descartado</span></td><td>Sin disponibilidad de horario</td></tr>
+              <tr><td><b>Candidato 04</b></td><td><span class="tag ok">Opción</span></td><td>Cumple perfil</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <span class="mbtn" style="margin-top:14px">⬇ Descargar vacante</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool">
+      <div class="tool-text">
+        <div class="ico">📊</div>
+        <h3>Reportería automática: de Excel a PowerPoint</h3>
+        <p>Automatización en Python que toma los datos de los candidatos desde Excel y arma la presentación en PowerPoint para el informe a jefatura, sin copiar ni pegar a mano.</p>
+        <ul class="ticks">
+          <li>Una diapositiva por candidato, con su información ordenada.</li>
+          <li>Informe ejecutivo listo para presentar.</li>
+          <li>Menos errores de transcripción y más tiempo para entrevistar.</li>
+        </ul>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Excel</span><span class="chip">PowerPoint</span><span class="chip">Reportería</span></div>
+      </div>
+      <div class="flow" aria-label="Flujo de Excel a PowerPoint">
+        <div class="fbox">
+          <div class="fh">📗 Excel</div>
+          <div class="frow"><span></span><span></span><span></span></div>
+          <div class="frow"><span></span><span></span><span></span></div>
+          <div class="frow"><span></span><span></span><span></span></div>
+        </div>
+        <div class="farrow">→<small>Python</small></div>
+        <div class="fbox slide">
+          <div class="fh">📙 PowerPoint</div>
+          <div class="sl"><b>Candidato 01</b><i></i><i></i><i style="width:60%"></i><em>Recomendado</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</main>
+<footer><div class="wrap">© 2026 Gabriel Arroba Sáenz · Talento Humano y RRHH</div></footer>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function show(t){
+    tabs.forEach(function(x){
+      var on=x===t;
+      x.setAttribute('aria-selected',on);
+      var p=document.getElementById(x.getAttribute('aria-controls'));
+      p.classList.toggle('on',on); p.hidden=!on;
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){show(t)});
+    t.addEventListener('keydown',function(e){
+      var n=null;
+      if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+      if(n){n.focus();show(n);e.preventDefault();}
+    });
+  });
+})();
+</script>
+</body>
+</html>
